@@ -41,9 +41,9 @@ public:
      * @brief Constructor: Loads cascade, known faces, and today's attendance.
      */
     AttendanceSystem(
-        const string& photos = "D:/Projects/OOPproject/photos",
-        const string& cascade = "D:/opencv/build/etc/haarcascades/haarcascade_frontalface_default.xml",
-        const string& file = "D:/Projects/OOPproject/attendance.csv")
+        const string& photos = "photos",
+        const string& cascade = "haarcascade_frontalface_default.xml",
+        const string& file = "attendance.csv")
         : photos_path(photos), cascade_path(cascade), attendance_file(file)
     {
         current_date = getCurrentDate();
