@@ -5,6 +5,14 @@ The system captures faces via webcam, verifies them for a few seconds, and marks
 
 ---
 
+## Authors 
+
+This model is built by **Electronics, Communication and Information Engineering** students year I part II in partial fulfillment of Bachelors in Engineering Degree under **Institute of Engineering, Thapathali Campus Department of Electronics and Computer Engineering**.
+- Krishna Kandel			THA081BEI014
+- Nishanta Poudel			THA081BEI025
+- Pranish Pokhrel			THA081BEI029
+- Prateek Chaulagain		THA081BEI030
+
 ## ✨ Features
 
 - 📂 **Loads known faces** from a local directory.
@@ -152,3 +160,4 @@ Feel free to use and modify for personal or academic projects.
 
 - [OpenCV](https://opencv.org/) for computer vision.  
 - Inspiration from real-world biometric attendance systems.
+
