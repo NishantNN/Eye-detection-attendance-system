@@ -1,64 +1,154 @@
-# Face Recognition Attendance System
+# Face Recognition Attendance System 🎥👨‍💻
 
-This project is an **Automated Attendance System** using Face Recognition.  
-It captures faces, recognizes them, and marks attendance in a CSV file.  
-Built with **OpenCV (Haar Cascade + Eigenfaces/MSE)** in C++.
-
----
-
-## 📌 Methodology (Flow)
-1. **Initialization**
-2. **Face Detection and Capture**
-3. **Face Recognition**
-4. **Attendance Marking**
-5. **Viewing Attendance**
-6. **Termination**
-
-![Flowchart](flowchart.png)
+A **real-time attendance management system** that uses **OpenCV Haar Cascade** for face detection and **Mean Squared Error (MSE)** for recognition.  
+The system captures faces via webcam, verifies them for a few seconds, and marks attendance into a **CSV file** — while preventing duplicates for the same day.
 
 ---
 
-## 📂 Features
-- Detects multiple faces from webcam feed.
-- Recognizes faces using trained data.
-- Marks attendance with **name + timestamp**.
-- Prevents duplicate attendance per day.
-- CSV-based attendance storage.
-- Console + On-screen messages for status.
+## ✨ Features
+
+- 📂 **Loads known faces** from a local directory.
+- 📸 **Real-time face detection** using Haar Cascade.
+- ✅ **Verification step (3 seconds)** before confirming identity.
+- ⏱️ **Cooldown system** to prevent accidental multiple markings.
+- 🔁 **Duplicate prevention** – only one attendance per person per day.
+- 🖥️ **On-screen status display** (verification, successful, or already marked).
+- 📑 **Attendance stored in CSV** with name, date, and day of week.
+- 📊 **View today’s attendance** in console.
 
 ---
 
-## 🛠️ Technologies Used
-- **C++**
-- **OpenCV**
-- **Haar Cascade Classifier**
-- **Eigenfaces + MSE for Recognition**
-- **CSV for attendance logs**
+## 🛠️ Requirements
+
+- **C++17** or later
+- [OpenCV 4.x](https://opencv.org/releases/) (with `opencv_world` or core modules installed)
+- CMake (for building project)
+- A working **webcam**
+- Modern compiler (MSVC, g++, or clang++)
 
 ---
 
-## 👨‍💻 Authors
-Made by **Electronics, Communication, and Information Engineering** students:
+## 📂 Project Structure
 
-- Krishna Kandel — THA081BEI014  
-- Nishanta Poudel — THA081BEI025  
-- Pranish Pokhrel — THA081BEI029  
-- Prateek Chaulagain — THA081BEI030  
+```
+/photos                # Directory containing known faces (labeled by filename)
+/attendance.csv        # CSV file where attendance is saved
+/main.cpp              # Main source code (AttendanceSystem class + main function)
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/face-attendance.git
+   cd face-attendance
+   ```
+
+2. **Add known faces**  
+   - Place images in the `/photos` directory.  
+   - File names should contain the person’s name (e.g., `Alice.jpg`, `Bob_1.png`).  
+
+3. **Build the project**
+   ```bash
+   mkdir build && cd build
+   cmake ..
+   cmake --build .
+   ```
+
+4. **Run the program**
+   ```bash
+   ./OOPproject
+   ```
+
+---
+
+## ▶️ Usage
+
+After running, choose from the **menu options**:
+
+```
+==== Face Attendance ====
+1. Start Attendance (webcam)
+2. View Today's Attendance
+3. Exit
+Choice:
+```
+
+- **1** → Starts webcam, detects & recognizes faces, and marks attendance.  
+- **2** → Displays a list of all people marked present today.  
+- **3** → Exits the program.  
+
+---
+
+## 🧮 Methodology
+
+The program follows these **steps**:
+
+1. **Initialization**  
+   - Load Haar cascade classifier.  
+   - Load known faces from `/photos`.  
+   - Load today’s attendance from `attendance.csv`.  
+
+2. **Face Detection & Capture**  
+   - Webcam frames converted to grayscale.  
+   - Haar Cascade detects face regions.  
+
+3. **Face Recognition**  
+   - Extracted face resized to `200x200`.  
+   - Compared against stored faces using **Mean Squared Error (MSE)**:  
+     \[
+     MSE = \frac{1}{N} \sum_{i=1}^{N} (I_1(i) - I_2(i))^2
+     \]
+     where \( N = 200 \times 200 \).  
+   - If MSE < **1500**, a match is confirmed.  
+
+4. **Attendance Marking**  
+   - Attendance stored in CSV as:  
+     ```
+     Name, Date(YYYY-MM-DD), Day
+     ```
+   - Prevents multiple markings for same person on same date.  
+
+5. **Viewing Attendance**  
+   - Console shows list of names already marked present today.  
+
+6. **Termination**  
+   - User exits via menu or pressing **q** during webcam session.  
+
+---
+
+## 📑 CSV File Format
+
+The attendance is stored in **attendance.csv**:
+
+```
+Name,Date,Day
+Alice,2025-08-20,Wed
+Bob,2025-08-20,Wed
+```
 
 ---
 
 ## 🚀 Future Improvements
-- Add deep learning-based recognition (CNN/DNN).  
-- Improve accuracy under different lighting.  
-- Cloud storage for attendance logs.  
-- Web dashboard for real-time attendance.  
-- Mobile app integration.  
+
+- 🔒 Add **face embedding models** (e.g., FaceNet, dlib) for more accurate recognition.  
+- 🖥️ Add a **GUI interface** (Qt/ImGui/Web) instead of console menu.  
+- 🌐 Integrate with a **database** (MySQL, SQLite) instead of plain CSV.  
+- 📱 Provide **mobile app integration** (Android/iOS).  
+- 📊 Add an **analytics dashboard** to track attendance trends.  
 
 ---
 
-## 📖 How to Run
-1. Clone the repository.  
-2. Place training images inside the dataset folder.  
-3. Build using CMake with OpenCV.  
-4. Run the executable to start webcam-based attendance.  
+## 📜 License
 
+This project is open-source under the **MIT License**.  
+Feel free to use and modify for personal or academic projects.  
+
+---
+
+## 🙌 Acknowledgements
+
+- [OpenCV](https://opencv.org/) for computer vision.  
+- Inspiration from real-world biometric attendance systems.
