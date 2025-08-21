@@ -50,8 +50,8 @@ This model is built by **Electronics, Communication and Information Engineering*
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/face-attendance.git
-   cd face-attendance
+   git clone https://github.com/yourusername/Eye-detection-attendance-system.git
+   cd Eye-detection-attendance-system
    ```
 
 2. **Add known faces**  
@@ -160,4 +160,5 @@ Feel free to use and modify for personal or academic projects.
 
 - [OpenCV](https://opencv.org/) for computer vision.  
 - Inspiration from real-world biometric attendance systems.
+
 
