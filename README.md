@@ -103,14 +103,15 @@ The program follows these **steps**:
    - Webcam frames converted to grayscale.  
    - Haar Cascade detects face regions.  
 
-3. **Face Recognition**  
-   - Extracted face resized to `200x200`.  
-   - Compared against stored faces using **Mean Squared Error (MSE)**:  
-     \[
-     MSE = \frac{1}{N} \sum_{i=1}^{N} (I_1(i) - I_2(i))^2
-     \]
-     where \( N = 200 \times 200 \).  
-   - If MSE < **1500**, a match is confirmed.  
+**Face Recognition**  
+- Extracted face resized to `200x200`.  
+- Compared against stored faces using **Mean Squared Error (MSE)**:  
+
+  ![MSE Formula](https://latex.codecogs.com/png.latex?MSE=\frac{1}{N}\sum_{i=1}^{N}(I_1(i)-I_2(i))^2)  
+
+  where `N = 200 × 200`.  
+- If `MSE < 1500`, a match is confirmed.
+ 
 
 4. **Attendance Marking**  
    - Attendance stored in CSV as:  
@@ -160,6 +161,7 @@ Feel free to use and modify for personal or academic projects.
 
 - [OpenCV](https://opencv.org/) for computer vision.  
 - Inspiration from real-world biometric attendance systems.
+
 
 
 
