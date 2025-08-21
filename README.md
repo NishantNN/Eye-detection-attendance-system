@@ -107,10 +107,11 @@ The program follows these **steps**:
 - Extracted face resized to `200x200`.  
 - Compared against stored faces using **Mean Squared Error (MSE)**:  
 
-  ![MSE Formula](https://latex.codecogs.com/svg.latex?\bg_black%20\textcolor{white}{MSE%20=%20\frac{1}{N}\sum_{i=1}^{N}(I_{1}(i)-I_{2}(i))^{2}})
+  ![MSE Formula](https://latex.codecogs.com/svg.latex?\bg_white%20MSE%20=%20\frac{1}{N}\sum_{i=1}^{N}(I_{1}(i)-I_{2}(i))^{2})  
 
   where `N = 200 × 200`.  
 - If `MSE < 1500`, a match is confirmed.  
+ 
 
 
  
