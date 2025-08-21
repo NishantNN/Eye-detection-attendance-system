@@ -1,0 +1,38 @@
+# CMake build files
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+/CMakeScripts/
+/Makefile
+/*.cmake.user
+/*.cmake
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Compiled object files
+*.o
+*.obj
+*.lo
+*.la
+*.al
+
+# Libraries
+*.lib
+*.a
+*.so
+*.dll
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# IDE/editor files (optional)
+*.vcxproj*
+*.sln
+*.user
+*.idea/
+*.vscode/
