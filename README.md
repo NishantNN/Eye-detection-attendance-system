@@ -1,6 +1,6 @@
-# Face Recognition Attendance System 🎥👨‍💻
+# Face Recognition Attendance Engine 🎥👨‍💻
 
-A **real-time attendance management system** that uses **OpenCV Haar Cascade** for face detection and **Mean Squared Error (MSE)** for recognition.  
+A **Face Recognition Attendance Engine** that uses **OpenCV Haar Cascade** for face detection and **Mean Squared Error (MSE)** for recognition.  
 The system captures faces via webcam, verifies them for a few seconds, and marks attendance into a **CSV file** — while preventing duplicates for the same day.
 
 ---
@@ -50,8 +50,8 @@ This model is built by **Electronics, Communication and Information Engineering*
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/NishantNN/Eye-detection-attendance-system.git
-   cd Eye-detection-attendance-system
+   git clone https://github.com/NishantNN/Face-Recognition-Attendance-Engine.git
+   cd Face-Recognition-Attendance-Engine
    ```
 
 2. **Add known faces**  
@@ -160,6 +160,7 @@ Feel free to use and modify for personal or academic projects.
 
 - [OpenCV](https://opencv.org/) for computer vision.  
 - Inspiration from real-world biometric attendance systems.
+
 
 
 
